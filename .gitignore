@@ -1,0 +1,9 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# React
+frontend_react/node_modules/
+frontend_react/dist/

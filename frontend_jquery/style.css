@@ -1,0 +1,21 @@
+/* Custom styles for Student Performance Tracker */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa;
+}
+
+.table th, .table td {
+  vertical-align: middle;
+}
+
+.badge {
+  font-weight: 500;
+}
+
+.card {
+  border-radius: 6px;
+}

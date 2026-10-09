@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Performance Tracker</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+  <nav class="navbar navbar-dark bg-dark mb-4 px-3 shadow-sm">
+    <div class="container d-flex justify-content-between">
+      <span class="navbar-brand fw-bold mb-0">Student Performance Tracker</span>
+      <div id="nav-user" class="d-none text-white small">
+        <span id="user-display" class="fw-bold me-2"></span><span id="role-display" class="badge bg-secondary me-3"></span>
+        <button id="logout-btn" class="btn btn-outline-light btn-sm">Logout</button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="container pb-4">
+    <div id="alert-box" class="d-none"></div>
+
+    <!-- Login Section -->
+    <div id="login-section" class="row justify-content-center pt-4">
+      <div class="col-md-4">
+        <div class="card shadow-sm border-0">
+          <div class="card-header bg-primary text-white text-center py-2 fw-bold">Sign In</div>
+          <div class="card-body p-3">
+            <form id="login-form">
+              <div class="mb-2"><label class="small fw-bold">Username</label><input type="text" id="username" class="form-control form-control-sm" required></div>
+              <div class="mb-2"><label class="small fw-bold">Password</label><input type="password" id="password" class="form-control form-control-sm" required></div>
+              <button type="submit" class="btn btn-primary btn-sm w-100 fw-bold">Login</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Dashboard Section -->
+    <div id="dashboard-section" class="d-none">
+      <div class="row g-2 mb-3 text-center">
+        <div class="col-6 col-md-3"><div class="card p-2 shadow-sm border-0"><div class="small text-muted fw-bold">Average</div><div class="h4 text-primary mb-0" id="stat-mean">-</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-2 shadow-sm border-0"><div class="small text-muted fw-bold">Highest</div><div class="h4 text-success mb-0" id="stat-max">-</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-2 shadow-sm border-0"><div class="small text-muted fw-bold">Lowest</div><div class="h4 text-danger mb-0" id="stat-min">-</div></div></div>
+        <div class="col-6 col-md-3"><div class="card p-2 shadow-sm border-0"><div class="small text-muted fw-bold">Pass Rate</div><div class="h4 text-dark mb-0" id="stat-pass">-</div></div></div>
+      </div>
+      <div class="card p-2 mb-3 shadow-sm border-0 d-flex flex-row justify-content-between small text-muted">
+        <div><strong>Grades: </strong><span id="grade-summary">-</span></div>
+        <div>Total: <span id="total-count" class="badge bg-secondary">0</span></div>
+      </div>
+
+      <!-- Add/Edit Student Form -->
+      <div id="form-card" class="card shadow-sm border-0 mb-3 d-none">
+        <div class="card-header bg-white py-2 fw-bold small" id="form-heading">Add Student</div>
+        <div class="card-body p-3">
+          <form id="student-form">
+            <input type="hidden" id="student-id">
+            <div class="row g-2 mb-2">
+              <div class="col-md-6"><input type="text" id="name" class="form-control form-control-sm" placeholder="Student Name" required></div>
+              <div class="col-md-6"><input type="text" id="subject" class="form-control form-control-sm" placeholder="Subject" required></div>
+              <div class="col-12"><textarea id="address" class="form-control form-control-sm" rows="2" placeholder="Address" required></textarea></div>
+              <div class="col-md-4"><input type="number" id="age" class="form-control form-control-sm" placeholder="Age" min="1" max="100" required></div>
+              <div class="col-md-4"><input type="number" step="0.1" id="marks" class="form-control form-control-sm" placeholder="Marks" min="0" max="100" required></div>
+              <div class="col-md-4">
+                <select id="grade" class="form-select form-select-sm" required>
+                  <option value="A">Grade A</option><option value="B">Grade B</option><option value="C">Grade C</option><option value="D">Grade D</option><option value="F">Grade F</option>
+                </select>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary btn-sm fw-bold">Save</button><button type="button" class="btn btn-secondary btn-sm d-none ms-1" id="cancel-btn">Cancel</button>
+          </form>
+        </div>
+      </div>
+
+      <!-- Records Table -->
+      <div class="card shadow-sm border-0">
+        <div class="card-header bg-white py-2 d-flex justify-content-between align-items-center">
+          <span class="fw-bold small">Records</span>
+          <div class="d-flex gap-2">
+            <input type="text" id="search-input" class="form-control form-control-sm" placeholder="Search..." style="width:140px;">
+            <select id="filter-grade" class="form-select form-select-sm" style="width:110px;">
+              <option value="">All Grades</option><option value="A">Grade A</option><option value="B">Grade B</option><option value="C">Grade C</option><option value="D">Grade D</option><option value="F">Grade F</option>
+            </select>
+          </div>
+        </div>
+        <div class="table-responsive">
+          <table class="table table-hover table-striped align-middle mb-0 small">
+            <thead class="table-light"><tr><th>ID</th><th>Name</th><th>Subject</th><th>Age</th><th>Marks</th><th>Grade</th><th>Address</th><th id="th-actions" class="text-end d-none">Actions</th></tr></thead>
+            <tbody id="student-tbody"></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script><script src="app.js"></script>
+</body>
+</html>

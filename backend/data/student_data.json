@@ -1,0 +1,65 @@
+[
+  {
+    "id": 1,
+    "name": "Alex Carter",
+    "address": "12 High St, Cityville",
+    "age": 20,
+    "marks": 85.5,
+    "grade": "A",
+    "subject": "Mathematics"
+  },
+  {
+    "id": 2,
+    "name": "Beth Davis",
+    "address": "44 Pine Rd, Townsville",
+    "age": 21,
+    "marks": 72.0,
+    "grade": "B",
+    "subject": "Physics"
+  },
+  {
+    "id": 3,
+    "name": "Charlie Evans",
+    "address": "89 Oak Ave, Lakeview",
+    "age": 19,
+    "marks": 58.0,
+    "grade": "C",
+    "subject": "Chemistry"
+  },
+  {
+    "id": 4,
+    "name": "Diana Ross",
+    "address": "101 Maple Ln, Hillcrest",
+    "age": 22,
+    "marks": 91.5,
+    "grade": "A",
+    "subject": "Biology"
+  },
+  {
+    "id": 5,
+    "name": "Ethan Hunt",
+    "address": "7 Mission St, Westview",
+    "age": 20,
+    "marks": 34.0,
+    "grade": "F",
+    "subject": "History"
+  },
+  {
+    "id": 6,
+    "name": "Madhur",
+    "address": "wjhdwjbhewbwehbw",
+    "age": 12,
+    "marks": 87.6,
+    "grade": "C",
+    "subject": "dhbhdb"
+  },
+  {
+    "id": 7,
+    "name": "Madhur",
+    "address": "ejhreuhi34u",
+    "age": 89,
+    "marks": 38.9,
+    "grade": "A",
+    "subject": "uye"
+  }
+]
